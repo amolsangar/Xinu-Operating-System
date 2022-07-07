@@ -11,15 +11,15 @@ The PLATFORM variable should be set to one of:
 - x86-qemu
 - x86-galileo
 
-## Development Environment Setup
+# Development Environment Setup
 
-** Running Xinu inside a Docker Container (Windows)
+Running Xinu inside a Docker Container (Windows)
 
 Please read this guideline carefully. 
 
 DO NOT JUST COPY PASTE AND RUN EVERY COMMAND YOU SEE HERE
 
-*** 1. Installation 
+## 1. Installation
 
 Before moving on with this tutorial, try to install docker in your machine. 
 
@@ -46,7 +46,7 @@ At this point you should be able to use docker command inside the Ubuntu termina
 
 Now you can clone your repository in the Ubuntu shell and follow this guideline.
 
-*** 2. Building the Docker image
+## 2. Building the Docker image
 
 To build Xinu inside a docker container, you first need to build the docker image itself using the docker file in the xinu repository:
 
@@ -65,7 +65,7 @@ Windows C:\> docker images
 
 and you should see the =xinu_image= in the list. 
 
-*** 3. Setup Mounting Volume (Windows users skip this)
+## 3. Setup Mounting Volume (Windows users skip this)
 
 To make your life easier for writing/editing the codes for assignments, we will create a docker volume. Create a folder at your desired location to keep the files shared with the docker container and create a folder. Here I'm assuming you want to create it in your home directory but feel free to create it in other locations (remember where you create it):
 
@@ -80,7 +80,7 @@ Windows C:\> cd ~/os_volume
 Windows C:\> git clone git@github.iu.edu:yourusername/yourreponame
 ```
 
-*** 4. Run Image
+## 4. Run Image
 
 *Running the Container*: Now you can start a container based on that image. Note that YOU SHOULD USE THIS COMMAND ONLY ONCE, otherwise you will lose your work. Note that in the following command you have to replace =xinu= with the name of the image you built before (in case it's different from =xinu_image=: 
 
@@ -98,7 +98,7 @@ Windows C:\> docker run --name xinu_container --cap-add=NET_ADMIN --device=/dev/
 
 *At this point you would be in the bash shell of the container.*
 
-*** 5. Setup your xinu repository (only for Windows users)
+## 5. Setup your xinu repository (only for Windows users)
 
 The following step should only be done if you skipped setting up the volume section above. We will =git clone= your private xinu repository into =/data= to make the next few instructions coherent with the volume-based setup.
 
@@ -120,7 +120,7 @@ Finally, copy over the provided =Makedefs.arm= into your =compile/Makedefs=:
 docker$ cp ~/Makedefs.arm xinu-$TERM/compile/Makedefs
 ```
 
-*** 6. Building Xinu Inside the Container
+## 6. Building Xinu Inside the Container
 
 Now you can finally build the xinu inside the container: 
 
@@ -134,7 +134,7 @@ At this point, you should see the XINU logo inside your terminal which means you
 
 *Exiting Xinu Shell*: To close the xinu shell use CTRL+a followed by x
 
-*** Stopping/Starting a container
+## Stopping/Starting a container
 
 When you are done working on an assignment or part of an assignment, you can exit the container using =exit= command. Then later on, when you want to continue your work, first make sure that the container is running: 
 
