@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "runprototypes.h": "c",
+        "shprototypes.h": "c",
+        "string.h": "c",
+        "future_prodcons.h": "c"
+    }
+}
